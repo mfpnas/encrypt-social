@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encrypt Social — Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🔐 Encrypt Social Hub</h1>
+    <p class="subtitle">Compose once. Post everywhere. Encrypted.</p>
+  </header>
+
+  <main>
+    <section class="composer">
+      <label for="message">Your message</label>
+      <textarea id="message" placeholder="Write your message here…" rows="6"></textarea>
+
+      <div class="options">
+        <label class="checkbox">
+          <input type="checkbox" id="encrypt-toggle" checked />
+          Encrypt before posting
+        </label>
+        <div id="crypto-status" class="crypto-status">Checking keys…</div>
+      </div>
+
+      <fieldset class="platforms">
+        <legend>Post to</legend>
+        <label><input type="checkbox" value="facebook" checked /> Facebook</label>
+        <label><input type="checkbox" value="instagram" checked /> Instagram</label>
+        <label><input type="checkbox" value="tiktok" checked /> TikTok</label>
+        <label><input type="checkbox" value="twitter" checked /> X / Twitter</label>
+      </fieldset>
+
+      <button id="btn-post" class="primary">Post to selected platforms</button>
+      <div id="result-log" class="result-log"></div>
+    </section>
+
+    <section class="preview">
+      <h2>Encrypted envelope preview</h2>
+      <pre id="payload-preview">—</pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
