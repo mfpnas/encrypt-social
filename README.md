@@ -50,7 +50,7 @@ recipients with the correct public key can decrypt.
 
 ```
 ┌────────────────┐   ECDH P-256   ┌────────────────┐
-│  Aurion (A)    │ ─────────────▶ │  Cida (B)      │
+│  USER (A)      │ ─────────────▶ │  USER (B)      │
 │  priv_A        │                │  priv_B        │
 │  pub_A         │ ◀───────────── │  pub_B         │
 └────────┬───────┘                └────────┬───────┘
@@ -105,7 +105,7 @@ Click the 🔐 **Encrypt Social** icon → **Open Settings**.
 ### 2. Set your identity
 
 Under **Identity**, enter your registered email (e.g.
-`aurionps@gmail.com`) and click **Save identity**.
+`useras@usera.com`) and click **Save identity**.
 
 This email is the human-readable label you will use in the trust
 network and the contact ID others will use for you.
@@ -175,7 +175,7 @@ The POC **does not include automatic key exchange**. Do it manually.
 
 1. **Settings → Trusted Contacts**.
 2. **Contact name / ID**: the contact's registered email (e.g.
-   `cidamelfaria@gmail.com`).
+   `userb@userb.com`).
 3. **Public key (base64)**: paste the key.
 4. Click **Add Contact**.
 
@@ -214,12 +214,12 @@ Use isolated **Firefox Profiles**.
 ### Create the second profile
 
 1. `about:profiles` → **Create a New Profile**.
-2. Name: `cidamelfaria`.
+2. Name: `userb`.
 3. **Launch profile in new browser**.
 
 ### Full flow
 
-| Step | Profile A (`aurionps@gmail.com`) | Profile B (`cidamelfaria@gmail.com`) |
+| Step | Profile A (`usera@usera.com`) | Profile B (`userb@userb.com`) |
 |------|--------------------------------|-------------------------------------|
 | 1 | Install extension, generate keys, save identity | — |
 | 2 | — | Install extension, generate keys, save identity |
@@ -248,8 +248,8 @@ sandbox restrictions. The flow is:
 
    ```bash
    ./tools/export-keys.sh \
-     ~/Downloads/encrypt-social-backup-aurionps@gmail.com.json \
-     aurionps@gmail.com
+     ~/Downloads/encrypt-social-backup-usera@usera.com.json \
+     usera@usera.com
    ```
 
    The script creates `~/secure-keys/encrypt-social-<email>-<date>.json.gpg`
@@ -258,7 +258,7 @@ sandbox restrictions. The flow is:
 3. **Restore**:
 
    ```bash
-   gpg -d ~/secure-keys/encrypt-social-aurionps_gmail.com-20260115.json.gpg > backup.json
+   gpg -d ~/secure-keys/encrypt-social-usera_usera.com-20260115.json.gpg > backup.json
    ```
 
    Then, in the extension settings console (F12):
@@ -315,7 +315,7 @@ For X, envelopes longer than **200 characters** are automatically
 fragmented into a thread:
 
 ```
-1/3 ES2:xxxxx
+1/3 ES2:usera
 2/3 yyyyy
 3/3 zzzzz
 ```
